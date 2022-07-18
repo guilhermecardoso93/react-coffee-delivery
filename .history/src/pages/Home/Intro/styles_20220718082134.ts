@@ -36,16 +36,15 @@ export const IntroContent = styled.div`
   }
 `;
 export const IntroTitle = styled(TitleText)`
-  width: 60%;
   margin-bottom: 1rem;
 `;
 
 export const BenefitsContainer = styled.div`
-  width: 100%;
+  width: 63%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 1.25rem;
-  margin-top: 4.125rem;
+  margin-top: 3.125rem;
 `;
 
 export const IconList = styled.span<IconsContainerProps>`
@@ -76,4 +75,10 @@ export const CoffeeImgHome = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    position: absolute;
+    z-index: 1;
+    left: 70rem;
+  }
 `;

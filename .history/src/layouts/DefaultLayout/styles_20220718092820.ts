@@ -4,18 +4,21 @@ export const LayoutContainer = styled.div`
   max-width: 80vw;
   height: calc(100vh - 1rem);
   margin: 2rem auto;
+  margin-bottom: 4rem;
+
   padding: 2.5rem;
   gap: 3rem;
 
   display: flex;
   flex-direction: column;
+  
+
 
   .container {
     width: 100%;
     max-width: 70rem;
-    margin-right: auto;
+    margin-right:auto;
     margin-left: auto;
-    
-    padding: 0 0.5rem;
+    padding: 0 .5rem;
   }
 `;

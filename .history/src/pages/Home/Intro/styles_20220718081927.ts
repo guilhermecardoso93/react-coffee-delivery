@@ -10,7 +10,7 @@ interface IconsContainerProps {
 export const IntroContainer = styled.section`
   width: 100%;
   height: 34rem;
-
+  padding: 0.5rem;
   background: ${({ theme }) => `url(${background}) no-repeat center,
       linear-gradient(
         0deg,
@@ -20,16 +20,17 @@ export const IntroContainer = styled.section`
       )`};
   background-size: cover;
   display: flex;
+
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 export const IntroContent = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3.5rem;
+  gap: 1.5rem;
 
   .regularText {
     width: 60%;
@@ -41,11 +42,11 @@ export const IntroTitle = styled(TitleText)`
 `;
 
 export const BenefitsContainer = styled.div`
-  width: 100%;
+  width: 63%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 1.25rem;
-  margin-top: 4.125rem;
+  margin-top: 3.125rem;
 `;
 
 export const IconList = styled.span<IconsContainerProps>`
@@ -76,4 +77,10 @@ export const CoffeeImgHome = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    position: absolute;
+    z-index: 1;
+    left: 70rem;
+  }
 `;

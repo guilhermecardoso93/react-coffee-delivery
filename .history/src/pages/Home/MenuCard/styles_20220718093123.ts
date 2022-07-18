@@ -15,6 +15,10 @@ export const MenuCardContainer = styled.section`
   margin-bottom: 4rem;
   transition: 0.4s;
 
+  &:hover {
+    box-shadow: 2px ;
+  }
+
   img {
     width: 7.5rem;
     height: 7.5rem;

@@ -41,7 +41,7 @@ export const IntroTitle = styled(TitleText)`
 `;
 
 export const BenefitsContainer = styled.div`
-  width: 100%;
+ width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 1.25rem;
@@ -76,4 +76,10 @@ export const CoffeeImgHome = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    position: absolute;
+    z-index: 1;
+    left: 70rem;
+  }
 `;

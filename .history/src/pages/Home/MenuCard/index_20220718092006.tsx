@@ -34,9 +34,6 @@ export function MenuCard() {
         </div>
         <CardOrderQuantity>
           <QuantityInput />
-          <button>
-            <ShoppingCart size={22} weight='fill'/>
-          </button>
         </CardOrderQuantity>
       </CardFooter>
     </MenuCardContainer>

@@ -1,15 +1,7 @@
 import { RegularText, TitleText } from "../../../components/Texts";
 import { ShoppingCart } from "phosphor-react";
-import {
-  MenuCardContainer,
-  Name,
-  Tags,
-  Description,
-  CardFooter,
-  CardOrderQuantity
-} from "./styles";
+import { MenuCardContainer, Name, Tags, Description, CardFooter } from "./styles";
 import CoffeImg1 from "../../../assets/coffee.png";
-import { QuantityInput } from "../../../components/QuantityInput";
 
 export function MenuCard() {
   return (
@@ -25,20 +17,15 @@ export function MenuCard() {
         O tradicional café feito com água quente e grãos moídos
       </Description>
 
-      <CardFooter>
-        <div>
-          <RegularText size="s">R$</RegularText>
-          <TitleText size="m" color="text" as="strong">
+        <CardFooter>
+          <RegularText size='s'>
+            R$
+          </RegularText>
+          <TitleText size='m'>
             9,90
           </TitleText>
-        </div>
-        <CardOrderQuantity>
-          <QuantityInput />
-          <button>
-            <ShoppingCart size={22} weight='fill'/>
-          </button>
-        </CardOrderQuantity>
-      </CardFooter>
+        </CardFooter>
+
     </MenuCardContainer>
   );
 }

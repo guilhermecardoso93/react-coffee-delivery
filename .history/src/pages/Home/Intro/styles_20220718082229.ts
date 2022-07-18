@@ -76,4 +76,10 @@ export const CoffeeImgHome = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+/*
+  img {
+    position: absolute;
+    z-index: 1;
+    left: 70rem;
+  }*/
 `;

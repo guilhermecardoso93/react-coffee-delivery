@@ -14,13 +14,7 @@ export function Menu() {
         <MenuCard />
         <MenuCard />
         <MenuCard />
-        <MenuCard /> 
-        <MenuCard />
-        <MenuCard />
-        <MenuCard />
-        <MenuCard />
-        <MenuCard /> 
-        <MenuCard />
+        <MenuCard /> <MenuCard />
       </MenuList>
     </MenuContainer>
   );

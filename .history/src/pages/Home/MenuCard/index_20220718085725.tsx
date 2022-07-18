@@ -5,11 +5,9 @@ import {
   Name,
   Tags,
   Description,
-  CardFooter,
-  CardOrderQuantity
+  CardFooter
 } from "./styles";
 import CoffeImg1 from "../../../assets/coffee.png";
-import { QuantityInput } from "../../../components/QuantityInput";
 
 export function MenuCard() {
   return (
@@ -32,12 +30,6 @@ export function MenuCard() {
             9,90
           </TitleText>
         </div>
-        <CardOrderQuantity>
-          <QuantityInput />
-          <button>
-            <ShoppingCart size={22} weight='fill'/>
-          </button>
-        </CardOrderQuantity>
       </CardFooter>
     </MenuCardContainer>
   );

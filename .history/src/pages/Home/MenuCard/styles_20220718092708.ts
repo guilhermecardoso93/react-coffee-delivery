@@ -12,8 +12,6 @@ export const MenuCardContainer = styled.section`
   justify-content: center;
   padding-top: 0;
   text-align: center;
-  margin-bottom: 4rem;
-  transition: 0.4s;
 
   img {
     width: 7.5rem;

@@ -12,8 +12,6 @@ export const MenuCardContainer = styled.section`
   justify-content: center;
   padding-top: 0;
   text-align: center;
-  margin-bottom: 4rem;
-  transition: 0.4s;
 
   img {
     width: 7.5rem;
@@ -66,7 +64,6 @@ export const CardFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap:10px;
 
   > div {
     display: flex;
@@ -79,24 +76,10 @@ export const CardFooter = styled.div`
   }
 `;
 
-export const CardOrderQuantity = styled.div`
-  width: 7.5rem;
-
-  > button {
-    width: 2.375rem;
-    height: 2.375rem;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: ${({ theme }) => theme.colors["brand-purple-dark"]};
-    color: ${({ theme }) => theme.colors["base-card"]};
-    border-radius: 6px;
-    margin-left: 0.3rem;
-    transition: 0.4s;
-
-    &:hover {
-      background-color: ${({ theme }) => theme.colors["brand-purple"]};
-    }
-  }
-`;
+export const CardOrderQuantity = styled.div `
+width: 7.5em;
+> button {
+  width: 2.375rem;
+  height: 2.375rem;
+}
+`
