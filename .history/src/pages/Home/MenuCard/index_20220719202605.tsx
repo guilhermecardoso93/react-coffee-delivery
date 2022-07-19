@@ -30,7 +30,8 @@ export function MenuCard({ coffee }: CoffeeProps) {
       <img src={CoffeImg1} />
       <Tags>
        {coffee.tags.map( (tag) =>(
-         <span key={`${coffee.id}${coffee.tags}`}>{tag}</span>
+         <span key={`${coffee.id}${coffee.tag}`}>{tag}</span>
+         <span>com leite</span>
        ))}
       </Tags>
       <Name>Expresso Tradicional</Name>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { RegularText, TitleText } from "../../../components/Texts";
 
 export const MenuCardContainer = styled.section`
-  width: 90%;
+  width: 100%;
   background-color: ${({ theme }) => theme.colors["base-card"]};
   border-radius: 6px 36px 6px 36px;
   padding: 1.3rem;
@@ -62,10 +62,10 @@ export const Description = styled(RegularText).attrs({
 `;
 
 export const CardFooter = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   > div {
     display: flex;

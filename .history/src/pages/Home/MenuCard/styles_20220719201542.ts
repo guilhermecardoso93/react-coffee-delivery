@@ -62,10 +62,11 @@ export const Description = styled(RegularText).attrs({
 `;
 
 export const CardFooter = styled.div`
-  width: 80%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  //gap:10px;
 
   > div {
     display: flex;
