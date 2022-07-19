@@ -10,7 +10,10 @@ export function Menu() {
         Nossos Cafés
       </TitleText>
       <MenuList>
-        {coffees.map(coffee => <MenuCard key={coffee.id} coffee={coffee} />)}
+        {coffees.map((coffee) =>  (
+          <MenuCard key={coffee.id} coffee={coffee}/>
+        ))}
+        
       </MenuList>
     </MenuContainer>
   );

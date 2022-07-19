@@ -113,6 +113,6 @@ export const coffees = [
     name: "Irlandês",
     description: "Bebida a base de café, uísque irlandês, açúcar e chantilly",
     photo: "irlandes.png",
-    price: 19.9
+    price: 9.9
   }
 ];

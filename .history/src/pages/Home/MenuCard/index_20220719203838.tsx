@@ -30,7 +30,7 @@ export function MenuCard({ coffee }: CoffeeProps) {
 
   return (
     <MenuCardContainer>
-      <img src={`../coffees/${coffee.photo}`} />
+      <img src={`../../../assets/coffees/${coffee.photo}`} />
       <Tags>
        {coffee.tags.map( (tag) =>(
          <span key={`${coffee.id}${coffee.tags}`}>{tag}</span>

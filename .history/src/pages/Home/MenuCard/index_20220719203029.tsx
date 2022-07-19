@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardOrderQuantity
 } from "./styles";
-import CoffeImg1 from "../../../assets/coffees/coffee.png";
+import CoffeImg1 from "../../../assets/coffee.png";
 import { QuantityInput } from "../../../components/QuantityInput";
 import { formatMoney } from "../../../utils/formatMoney";
 
@@ -26,11 +26,11 @@ interface CoffeeProps {
 }
 
 export function MenuCard({ coffee }: CoffeeProps) {
-  const pricePretty = formatMoney(coffee.price)
+  const formartedPrice = formatMoney(coffee.price)
 
   return (
     <MenuCardContainer>
-      <img src={`../coffees/${coffee.photo}`} />
+      <img src={CoffeImg1} />
       <Tags>
        {coffee.tags.map( (tag) =>(
          <span key={`${coffee.id}${coffee.tags}`}>{tag}</span>
@@ -46,7 +46,7 @@ export function MenuCard({ coffee }: CoffeeProps) {
         <div>
           <RegularText size="s">R$</RegularText>
           <TitleText size="m" color="text" as="strong">
-            {pricePretty}
+            {formartedPrice}
           </TitleText>
         </div>
         <CardOrderQuantity>
