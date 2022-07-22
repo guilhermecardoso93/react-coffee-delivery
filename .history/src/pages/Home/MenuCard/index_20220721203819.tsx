@@ -41,7 +41,7 @@ export function MenuCard({ coffee }: CoffeeProps) {
   function handleAddToCart() {
     const coffeeToAdd = {
       ...coffee,
-      quantity
+      quantity,
     };
     addCoffeeToCart(coffeeToAdd);
   }
@@ -50,18 +50,18 @@ export function MenuCard({ coffee }: CoffeeProps) {
 
   return (
     <MenuCardContainer>
-      <img src={`/coffees/${coffee.photo}`} />
+      <img src={`../coffees/${coffee.photo}`} />
       <Tags>
         {coffee.tags.map(tag =>
-          <span key={`${coffee.id}${tag}`}>
+          <span key={`${coffee.id}${coffee.tags}`}>
             {tag}
           </span>
         )}
       </Tags>
-
       <Name>
         {coffee.name}
       </Name>
+
       <Description>
         {coffee.description}
       </Description>

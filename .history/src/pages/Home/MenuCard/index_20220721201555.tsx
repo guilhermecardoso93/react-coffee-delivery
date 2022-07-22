@@ -10,8 +10,6 @@ import {
 } from "./styles";
 import { QuantityInput } from "../../../components/QuantityInput";
 import { formatMoney } from "../../../utils/formatMoney";
-import { useCart } from "../../../hooks/useCart";
-import { useState } from "react";
 
 export interface Coffee {
   id: number;
@@ -27,41 +25,18 @@ interface CoffeeProps {
 }
 
 export function MenuCard({ coffee }: CoffeeProps) {
-  const [quantity, setQuantity] = useState(1);
-  const { addCoffeeToCart } = useCart();
-
-  function handleIncrease() {
-    setQuantity(state => state + 1);
-  }
-
-  function handleDecrease() {
-    setQuantity(state => state - 1);
-  }
-
-  function handleAddToCart() {
-    const coffeeToAdd = {
-      ...coffee,
-      quantity
-    };
-    addCoffeeToCart(coffeeToAdd);
-  }
-
-  const pricePretty = formatMoney(coffee.price);
+  const pricePretty = formatMoney(coffee.price)
 
   return (
     <MenuCardContainer>
-      <img src={`/coffees/${coffee.photo}`} />
+      <img src={`../coffees/${coffee.photo}`} />
       <Tags>
-        {coffee.tags.map(tag =>
-          <span key={`${coffee.id}${tag}`}>
-            {tag}
-          </span>
-        )}
+       {coffee.tags.map( (tag) =>(
+         <span key={`${coffee.id}${coffee.tags}`}>{tag}</span>
+       ))}
       </Tags>
+      <Name>{coffee.name}</Name>
 
-      <Name>
-        {coffee.name}
-      </Name>
       <Description>
         {coffee.description}
       </Description>
@@ -74,12 +49,8 @@ export function MenuCard({ coffee }: CoffeeProps) {
           </TitleText>
         </div>
         <CardOrderQuantity>
-          <QuantityInput
-            onIncrease={handleIncrease}
-            onDecrease={handleDecrease}
-            quantity={quantity}
-          />
-          <button onClick={handleAddToCart}>
+          <QuantityInput />
+          <button>
             <ShoppingCart size={22} weight="fill" />
           </button>
         </CardOrderQuantity>

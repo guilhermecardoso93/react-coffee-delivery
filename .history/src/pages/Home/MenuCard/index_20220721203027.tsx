@@ -35,13 +35,13 @@ export function MenuCard({ coffee }: CoffeeProps) {
   }
 
   function handleDecrease() {
-    setQuantity(state => state - 1);
+    setQuantity(state => state 1 1);
   }
 
   function handleAddToCart() {
     const coffeeToAdd = {
       ...coffee,
-      quantity
+      quantity: 1
     };
     addCoffeeToCart(coffeeToAdd);
   }
@@ -50,18 +50,18 @@ export function MenuCard({ coffee }: CoffeeProps) {
 
   return (
     <MenuCardContainer>
-      <img src={`/coffees/${coffee.photo}`} />
+      <img src={`../coffees/${coffee.photo}`} />
       <Tags>
         {coffee.tags.map(tag =>
-          <span key={`${coffee.id}${tag}`}>
+          <span key={`${coffee.id}${coffee.tags}`}>
             {tag}
           </span>
         )}
       </Tags>
-
       <Name>
         {coffee.name}
       </Name>
+
       <Description>
         {coffee.description}
       </Description>
@@ -74,11 +74,7 @@ export function MenuCard({ coffee }: CoffeeProps) {
           </TitleText>
         </div>
         <CardOrderQuantity>
-          <QuantityInput
-            onIncrease={handleIncrease}
-            onDecrease={handleDecrease}
-            quantity={quantity}
-          />
+          <QuantityInput />
           <button onClick={handleAddToCart}>
             <ShoppingCart size={22} weight="fill" />
           </button>

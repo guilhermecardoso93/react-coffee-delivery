@@ -3,9 +3,9 @@ import { Icon, QuantityInputContainer } from "./styles";
 
 interface QuantityInputProps {
   size?: "medium" | "small";
-  quantity: number;
-  onIncrease: () => void;
-  onDecrease: () => void;
+  quantity?: number;
+  onIncrease?: () => void;
+  onDecrease?: () => void;
 }
 
 export function QuantityInput({
@@ -16,7 +16,7 @@ export function QuantityInput({
 }: QuantityInputProps) {
   return (
     <QuantityInputContainer size={size}>
-      <Icon disabled={quantity <= 1} onClick={onDecrease}>
+      <Icon onClick={onDecrease}>
         <Minus size={14} weight="fill" />
       </Icon>
       <input type="number" readOnly value={quantity} />
