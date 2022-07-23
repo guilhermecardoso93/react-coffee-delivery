@@ -29,10 +29,10 @@ export const CartContext = createContext({} as CartContextType);
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     const storedCartItems = localStorage.getItem(COFFEE_ITEMS_STORAGE_KEY);
-    if (storedCartItems) {
-      return JSON.parse(storedCartItems);
+    if(storedCartItems) {
+      return JSON.parse(storedCartItems)
     }
-    return [];
+    return []
   });
 
   const cartQuantity = cartItems.length;

@@ -40,6 +40,7 @@ export const HeaderButtonBase = styled.div<HeaderButtonProps>`
   height: 2.3rem;
   position: relative;
   font-size: 0.875rem;
+
   cursor: inherit;
 
   span {

@@ -5,7 +5,7 @@ import { useCart } from "../../hooks/useCart";
 import { HeaderButton, HeaderButtonBase, HeaderContainer } from "./styles";
 
 export function Header() {
-  const { cartQuantity } = useCart();
+  const { cartQuantity } = useCart()
 
   return (
     <HeaderContainer>
@@ -24,10 +24,7 @@ export function Header() {
             Porto Alegre, RS
           </HeaderButtonBase>
           <HeaderButtonBase variant="yellow">
-            {cartQuantity >= 1 &&
-              <span>
-                {cartQuantity}
-              </span>}
+            { cartQuantity >= 1 && <span>{cartQuantity}</span>}
             <NavLink to="/completeorder">
               <ShoppingCart size={20} weight="fill" />
             </NavLink>

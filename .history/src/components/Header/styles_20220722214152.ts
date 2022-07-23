@@ -40,7 +40,6 @@ export const HeaderButtonBase = styled.div<HeaderButtonProps>`
   height: 2.3rem;
   position: relative;
   font-size: 0.875rem;
-  cursor: inherit;
 
   span {
     display: flex;
@@ -65,10 +64,6 @@ export const HeaderButtonBase = styled.div<HeaderButtonProps>`
     css`
       background-color: ${theme.colors[`brand-${variant}-light`]};
       color: ${theme.colors[`brand-${variant}`]};
-
-      span {
-        background-color: ${theme.colors[`brand-${variant}-dark`]};
-      }
     `}
 
   ${({ variant, theme }) =>

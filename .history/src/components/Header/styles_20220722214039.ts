@@ -40,24 +40,20 @@ export const HeaderButtonBase = styled.div<HeaderButtonProps>`
   height: 2.3rem;
   position: relative;
   font-size: 0.875rem;
-  cursor: inherit;
-
+   
   span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
-    top: calc(-1.25rem / 2);
-    right: calc(-1.25rem / 2);
-
     width: 1.25rem;
     height: 1.25rem;
-
     border-radius: 50%;
+    top: calc(-1.25rem /2);
+    right: calc(-1.25rem /2);
     background: ${({ theme }) => theme.colors["brand-yellow-dark"]};
     color: ${({ theme }) => theme.colors["white"]};
-    font-size: 0.75rem;
-    font-weight: 700;
+
+
+    
+
   }
 
   ${({ variant, theme }) =>
@@ -65,10 +61,6 @@ export const HeaderButtonBase = styled.div<HeaderButtonProps>`
     css`
       background-color: ${theme.colors[`brand-${variant}-light`]};
       color: ${theme.colors[`brand-${variant}`]};
-
-      span {
-        background-color: ${theme.colors[`brand-${variant}-dark`]};
-      }
     `}
 
   ${({ variant, theme }) =>

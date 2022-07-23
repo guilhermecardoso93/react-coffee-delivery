@@ -22,23 +22,17 @@ interface CartContextProviderProps {
   children: ReactNode;
 }
 
-const COFFEE_ITEMS_STORAGE_KEY = "coffeeDelivery:cartItems";
+const COFFEE_ITEMS_STORAGE_KEY = "coffeeDelivery:cartItems"
 
 export const CartContext = createContext({} as CartContextType);
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    const storedCartItems = localStorage.getItem(COFFEE_ITEMS_STORAGE_KEY);
-    if (storedCartItems) {
-      return JSON.parse(storedCartItems);
-    }
-    return [];
-  });
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const cartQuantity = cartItems.length;
   const cartItemsTotal = cartItems.reduce((total, cartItem) => {
-    return total + cartItem.price * cartItem.quantity;
-  }, 0);
+    return total + cartItem.price * cartItem.quantity
+  }, 0)
 
   function addCoffeeToCart(coffee: CartItem) {
     const coffeeAlreadyExistsInCart = cartItems.findIndex(
@@ -89,13 +83,9 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     setCartItems(newCart);
   }
 
-  useEffect(
-    () => {
-      localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartItems));
-    },
-    [cartItems]
-  );
-
+  useEffect(()=> {
+    localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartItems))
+  }, [cartItems])
   return (
     <CartContext.Provider
       value={{

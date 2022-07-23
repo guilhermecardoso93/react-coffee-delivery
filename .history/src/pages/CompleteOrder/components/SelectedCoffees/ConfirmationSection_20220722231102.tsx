@@ -13,21 +13,17 @@ export function ConfirmationSection() {
 
   const formattedItemsTotal = formatMoney(cartItemsTotal);
   const formattedCartTotal = formatMoney(cartTotal);
-  const formattedDelivery = formatMoney(DELIVERY_PRICE);
+  const formattedDelivery = formatMoney(DELIVERY_PRICE)
 
   return (
     <ConfirmationSectionContainer>
       <div>
         <RegularText size="s">Total de Itens</RegularText>
-        <RegularText>
-          R$ {formattedItemsTotal}
-        </RegularText>
+        <RegularText>R$ {formattedItemsTotal}</RegularText>
       </div>
       <div>
         <RegularText size="s">Entrega</RegularText>
-        <RegularText>
-          R$ {formattedDelivery}
-        </RegularText>
+        <RegularText>R$ {formattedDelivery}</RegularText>
       </div>
       <div>
         <RegularText size="l" weight="700">
