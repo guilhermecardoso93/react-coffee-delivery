@@ -4,7 +4,7 @@ import OrderConfirmedImg from "../../assets/Illustration.svg";
 import { OrderConfirmedContainer, OrderDetailsContainer } from "./styles";
 import { useTheme } from "styled-components";
 import { InfoWithIcon } from "../../components/InfoWithIcon";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { OrderData } from "../CompleteOrder";
 import { paymentMethods } from "../CompleteOrder/components/CompleteOrderForm/PaymentOptionsForm";
 import { useEffect } from "react";
@@ -16,8 +16,6 @@ interface LocationType {
 export function OrderConfirmed() {
   const { colors } = useTheme();
   const { state } = (useLocation() as unknown) as LocationType;
-  const navigate = useNavigate();
-
 
   useEffect(() => {
     if (!state) {

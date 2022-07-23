@@ -1,13 +1,11 @@
 import { RegularText, TitleText } from "../../components/Texts";
-import { Clock, CurrencyDollar, MapPin } from "phosphor-react";
+import { Clock, Coffee, CurrencyDollar, MapPin } from "phosphor-react";
 import OrderConfirmedImg from "../../assets/Illustration.svg";
 import { OrderConfirmedContainer, OrderDetailsContainer } from "./styles";
 import { useTheme } from "styled-components";
 import { InfoWithIcon } from "../../components/InfoWithIcon";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { OrderData } from "../CompleteOrder";
-import { paymentMethods } from "../CompleteOrder/components/CompleteOrderForm/PaymentOptionsForm";
-import { useEffect } from "react";
 
 interface LocationType {
   state: OrderData;
@@ -15,17 +13,7 @@ interface LocationType {
 
 export function OrderConfirmed() {
   const { colors } = useTheme();
-  const { state } = (useLocation() as unknown) as LocationType;
-  const navigate = useNavigate();
-
-
-  useEffect(() => {
-    if (!state) {
-      navigate("/");
-    }
-  }, []);
-
-  if (!state) return <></>;
+  const { state } = useLocation() as unknown as LocationType;
 
   return (
     <OrderConfirmedContainer className="container">
@@ -42,12 +30,9 @@ export function OrderConfirmed() {
             iconBg={colors["brand-purple-dark"]}
             text={
               <RegularText>
-                Entrega em{" "}
-                <strong>
-                  {state.street}, n°{state.number}{" "}
-                </strong>
+                Entrega em <strong>Rua Paulo Tarso, n°30 </strong>
                 <br />
-                {state.district} - {state.city}, {state.uf}
+                Áquarios - Cabo Frio - RJ
               </RegularText>
             }
           />
@@ -56,8 +41,8 @@ export function OrderConfirmed() {
             iconBg={colors["brand-yellow-dark"]}
             text={
               <RegularText>
-                Previsão de Entrega<br />
-                <strong>20 min</strong>
+                Previsão de Entrega <br />
+                <strong>20 min </strong>
               </RegularText>
             }
           />
@@ -67,7 +52,7 @@ export function OrderConfirmed() {
             text={
               <RegularText>
                 Pagamento na entrega <br />
-                <strong>{paymentMethods[state.paymentMethod].label}</strong>
+                <strong>Cartão de Crédito </strong>
               </RegularText>
             }
           />

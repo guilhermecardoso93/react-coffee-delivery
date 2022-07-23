@@ -28,36 +28,15 @@ const confirmOrderFormValidationSchema = zod.object({
   })
 });
 
-export type OrderData = zod.infer<typeof confirmOrderFormValidationSchema>;
-
-type ConfirmOrderFormData = OrderData;
-
 export function CompleteOrder() {
-  const confirmOrderForm = useForm<ConfirmOrderFormData>({
-    resolver: zodResolver(confirmOrderFormValidationSchema),
-    defaultValues: {
-      paymentMethod: undefined
-    }
+  const confirmOrderForm = useForm({
+    resolver: zodResolver(confirmOrderFormValidationSchema)
   });
 
   const { handleSubmit } = confirmOrderForm;
-
-  const navigate = useNavigate();
-  const { cleanCart } = useCart();
-
-  function handleConfirmOrder(data: ConfirmOrderFormData) {
-    navigate("/orderConfirmed", {
-      state: data
-    });
-    cleanCart();
-  }
-
   return (
     <FormProvider {...confirmOrderForm}>
-      <CompleteOrderContainer
-        className="container"
-        onSubmit={handleSubmit(handleConfirmOrder)}
-      >
+      <CompleteOrderContainer className="container" onSubmit={handleSubmit}>
         <CompleteOrderForm />
         <SelectedCoffees />
       </CompleteOrderContainer>
